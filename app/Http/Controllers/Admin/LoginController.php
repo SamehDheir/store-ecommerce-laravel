@@ -22,8 +22,7 @@ class LoginController extends Controller
           return redirect()->route('admin.dashboard');
         } else {
             // $notify()->error('خطأ في البيانات برجاء المحاولة مجددا');
-            return back();
-            // ->withErrors($vaidation)->withInput($request->all());
+            return redirect()-> back()->withErrors(['error'=>'هناك خطأ بالبيانات']);
         }
 
     }
